@@ -9,5 +9,4 @@ import { NavbarComponent } from "./_components/navbar/navbar.component";
 })
 export class AppComponent {
   title = 'certificate-generator-model';
-  navbar: boolean = true
 }
