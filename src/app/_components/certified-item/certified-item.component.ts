@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { SecondaryButtonComponent } from "../secondary-button/secondary-button.component";
 
 @Component({
   selector: 'app-certified-item',
-  imports: [SecondaryButtonComponent],
+  imports: [SecondaryButtonComponent, RouterLink],
   templateUrl: './certified-item.component.html',
   styleUrl: './certified-item.component.css'
 })
 export class CertifiedItemComponent {
-
+  id: string = '6'
 }
