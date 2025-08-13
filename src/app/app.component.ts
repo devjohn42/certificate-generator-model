@@ -1,16 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { BaseUiComponent } from "./_components/base-ui/base-ui.component";
-import { CertifiedItemComponent } from "./_components/certified-item/certified-item.component";
 import { NavbarComponent } from "./_components/navbar/navbar.component";
-import { PrimaryButtonComponent } from "./_components/primary-button/primary-button.component";
-import { SecondaryButtonComponent } from "./_components/secondary-button/secondary-button.component";
-import { CertificateComponent } from "./pages/certificate/certificate.component";
-import { CertificatesFormComponent } from "./pages/certificates-form/certificates-form.component";
-import { CertificatesComponent } from "./pages/certificates/certificates.component";
 
 @Component({
   selector: 'app-root',
-  imports: [NavbarComponent, PrimaryButtonComponent, SecondaryButtonComponent, CertifiedItemComponent, BaseUiComponent, CertificatesComponent, CertificatesFormComponent, CertificateComponent],
+  imports: [NavbarComponent, BaseUiComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
