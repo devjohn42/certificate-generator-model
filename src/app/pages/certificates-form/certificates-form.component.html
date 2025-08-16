@@ -29,7 +29,7 @@
         </div>
         }
       </div>
-      <app-secondary-button
+      <app-secondary-button textoBotao='Adicionar' phClass="ph ph-plus"
         [ngStyle]="campoInvalido(atividadeRef) ? {'margin-bottom': '24px'} : {}"></app-secondary-button>
     </div>
     <div class="atividades-group">
@@ -49,6 +49,6 @@
       </div>
     </div>
 
-    <app-primary-button></app-primary-button>
+    <app-primary-button textoBotao='Gerar Certificado'></app-primary-button>
   </div>
 </form>
