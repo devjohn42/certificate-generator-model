@@ -1,4 +1,4 @@
-<button [ngStyle]="disable ? {'opacity': '50%'} : {}" class="custom-button">
+<button [disabled]="disable" [ngStyle]="disable ? {'opacity': '50%'} : {}" class="custom-button">
   @if(phClass) {
   <i class="{{phClass}}"></i>
   }
