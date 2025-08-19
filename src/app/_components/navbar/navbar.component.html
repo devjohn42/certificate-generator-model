@@ -6,14 +6,14 @@
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
         <li class="nav-item d-flex align-items-center">
-          <i class="ph ph-medal active"></i>
-          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-            class="nav-link p-0">List de Certificados</a>
+          <i class="ph ph-medal" [ngClass]="{'active': rlaLC.isActive}"></i>
+          <a routerLink="/" #rlaLC="routerLinkActive" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}" class="nav-link p-0">List de Certificados</a>
         </li>
         <li class="nav-item d-flex align-items-center ms-3">
-          <i class="ph ph-circles-three-plus"></i>
-          <a routerLink="/certificados/novo" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-            class="nav-link">Gerar Certificado</a>
+          <i class="ph ph-circles-three-plus" [ngClass]="{'active': rlaGC.isActive}"></i>
+          <a routerLink="/certificados/novo" #rlaGC="routerLinkActive" routerLinkActive="active" class="nav-link">Gerar
+            Certificado</a>
         </li>
       </ul>
     </div>

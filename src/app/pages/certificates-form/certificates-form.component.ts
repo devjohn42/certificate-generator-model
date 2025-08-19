@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { v4 as uuidv4 } from 'uuid';
 import { PrimaryButtonComponent } from "../../_components/primary-button/primary-button.component";
 import { SecondaryButtonComponent } from "../../_components/secondary-button/secondary-button.component";
 import { CertificateService } from '../../_services/certificate.service';
@@ -13,11 +14,11 @@ import { Certificate } from '../../interfaces/certificate';
   styleUrl: './certificates-form.component.css'
 })
 export class CertificatesFormComponent {
-  constructor(private certificateService: CertificateService) {
-
-  }
+  constructor(private certificateService: CertificateService) { }
+  @ViewChild('form') form!: NgForm
 
   certificado: Certificate = {
+    id: '',
     atividades: [],
     nome: '',
     dataEmissao: ''
@@ -33,6 +34,8 @@ export class CertificatesFormComponent {
   }
 
   adicionar() {
+    if (this.atividade.length === 0) return // não adiciona atividade mesmo com o botão desativado
+
     this.certificado.atividades.push(this.atividade)
     this.atividade = ""
   }
@@ -45,7 +48,17 @@ export class CertificatesFormComponent {
     if (!this.formValido()) return
 
     this.certificado.dataEmissao = this.dataAtual()
+    this.certificado.id = uuidv4()
     this.certificateService.adicionarCertificado(this.certificado)
+
+    this.certificado = {
+      id: '',
+      atividades: [],
+      nome: '',
+      dataEmissao: ''
+    }
+
+    this.form.resetForm()
   }
 
   dataAtual() {
