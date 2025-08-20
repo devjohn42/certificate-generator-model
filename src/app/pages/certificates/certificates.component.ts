@@ -7,7 +7,7 @@ import { Certificate } from '../../interfaces/certificate';
 
 @Component({
   selector: 'app-certificates',
-  imports: [SecondaryButtonComponent, RouterLink],
+  imports: [SecondaryButtonComponent, RouterLink, CertifiedItemComponent],
   templateUrl: './certificates.component.html',
   styleUrl: './certificates.component.css'
 })
