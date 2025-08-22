@@ -12,10 +12,6 @@ import { RouterLink, RouterModule } from '@angular/router';
 
 export class NavbarComponent implements OnInit {
   ngOnInit(): void {
-    this.message()
-  }
 
-  message() {
-    console.log('componete navbar inicializou (dentro de uma função)')
   }
 }
